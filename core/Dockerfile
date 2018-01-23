@@ -1,5 +1,5 @@
 FROM ubuntu:xenial
-MAINTAINER paulnglsh@gmail.com
+MAINTAINER rmalleman@gmail.com
 
 ## APT setup
 ## Upgrade all packages
@@ -17,6 +17,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
     build-essential \
     python \
+    python-pip \
+    python-setuptools \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/
 

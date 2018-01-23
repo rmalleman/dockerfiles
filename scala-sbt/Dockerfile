@@ -1,5 +1,5 @@
-FROM log0ymxm/java
-MAINTAINER paulnglsh@gmail.com
+FROM rmalleman/java
+MAINTAINER malleman@rmalleman@gmail.com
 
 RUN echo 'deb https://dl.bintray.com/sbt/debian /' > /etc/apt/sources.list.d/sbt.list &&\
     apt-get update && \
@@ -7,6 +7,7 @@ RUN echo 'deb https://dl.bintray.com/sbt/debian /' > /etc/apt/sources.list.d/sbt
     apt-get install -y --force-yes mysql-client && \
     apt-get install -y --force-yes docker.io && \
     apt-get clean autoremove -y && \
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
+    pip install awscli
 
 RUN sbt

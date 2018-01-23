@@ -1,4 +1,4 @@
-FROM log0ymxm/core
+FROM rmalleman/core
 
 ENV JAVA_VERSION=8
 
